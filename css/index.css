@@ -1,0 +1,79 @@
+body{
+    background-image: url("../img/fundo.jpg");
+}
+.exibir{
+    display: table;
+}
+.imagem{
+    width: 15%;
+}
+#imagens{
+    position: relative;
+    float: left;
+    width: 50%;
+}
+.imagemGrande{
+    display: block;
+    border: 3px solid #FFFFFF;
+    padding: 3% 50px 88px 50px ; 
+    float: right;
+    position: relative;
+    text-align: center;
+    margin-top: 28px;
+    margin-bottom: 50px;
+    max-width: 50%;
+}
+header{
+    text-align: center;
+    background-image: url(../img/fav.jpg);
+    background-size: contain;
+    padding-bottom: 30px;
+}
+.titulo{
+    font-size: 130px;
+    font-family: "Apple Chancery, cursive";
+    background-color: #000;
+    padding: 2px 25px;
+    color: #FFF;
+    border-radius: 5px;
+}
+footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+.fecharImagem, a:hover{
+    text-decoration: none;
+    color: #008B8B;
+}
+.btn.btn-primary, .btn.btn-primary:focus{
+    font-family: "Apple Chancery, cursive";
+    background-color: #008B8B;
+    border-color: #008B8B;
+    color: #FFF;
+}
+.opcoesIniciais{
+    margin: 5px;
+}
+.infoImagem{
+    color: #FFF;
+}
+.opcoesImagem{
+    margin-top: 20px;
+    font-size: 9px;
+}
+.frase.de.efeito{
+    font-family: "Apple Chancery, cursive";
+    font-size: 17px;
+    color: #000;
+}
+.imagemExibicao{
+    max-width: 100%;
+}
+.opcoesIniciais input{
+    opacity: 0;
+}
+.opcoesIniciais a:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+}

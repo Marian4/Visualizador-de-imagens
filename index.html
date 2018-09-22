@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Magic Look</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Rafaela Ferreira, Nathália Gabrielly, Mariana Moraes, Nayanne Silva">
+    
+    <!--Favicon-->
+    <link rel="icon" href="img/fav.jpg" type="image/x-icon"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    
+    <!-- Importações de códigos em css-->
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    
+<body>
+    
+    <!--cabeçalho do site, onde estão expostos o nome do visualizador e uma frase de efeito, assim como também dois botões de opções iniciais-->
+    
+    <header>
+    <div class="cabeçalho">
+        <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
+        <spam class="titulo">Magic Look</spam><br>
+        <spam class="frase de efeito">Visualizador de imagens. Veja, Transforme, Compartilhe.</spam>
+        <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
+        <div class="opcoesIniciais">
+            <button class="btn btn-primary"><a href="ajuda.html">Ajuda</a></button>
+            <label class="btn btn-primary" for='selecao-arquivo'>Importar</label>
+            <input type="file" id='selecao-arquivo' id="img_input" onclick="ImagePreview(this)">
+            <img id="img_preview" src="" alt="Image Preview" />
+        </div>
+        <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
+    </div>
+    </header>
+    
+    <!-- Div compostas de mais duas Divs, uma contendo as imagens do usuário e outra contendo uma possível imagem selecionada que posteriormente não estará visível a menos que tenha sido de fato selecionada e não fechada-->
+    
+    <div class="exibir" id="imagens">
+        <a href="#"><img src = "img/amor.jpg" title= "amor.jpg" alt="amor.jpg" border align="center" hspace=30 vspace=30 class="imagem" onclick="mudarImagem(this)"/></a>
+        <a href="#"><img src = "img/arroz.jpg" title= "arroz.jpg" alt="arroz.jpg" border align="center" hspace=30 vspace=30 class="imagem" onclick="mudarImagem(this)"/></a>
+        <a href="#"><img src = "img/coelho.jpg" title="coelho.jpg" alt="coelho.jpg" border align="center" hspace=30 vspace=30 class="imagem" onclick="mudarImagem(this)"/></a>
+        <a href="#"><img src = "img/eleven.jpg" title= "eleven.jpg" alt="eleven.jpg" border align="center" hspace=30 vspace=30 class="imagem" onclick="mudarImagem(this)"/></a>
+        <a href="#"><img src = "img/filtro.jpg" title= "filtro.jpg" alt="filtro.jpg" border align="center" hspace=30 vspace=30 class="imagem" onclick="mudarImagem(this)"/></a>
+        <a href="#"><img src = "img/flor.jpg" title= "flor.jpg" alt="flor.jpg" border align="center" hspace=30 vspace=30 class="imagem" onclick="mudarImagem(this)"/></a>
+        <a href="#"><img src = "img/ratinho.jpg" title= "ratinho.jpg" alt="ratinho.jpg" border align="center" hspace=30 vspace=30 class="imagem" onclick="mudarImagem(this)"/></a>
+        <a href="#"><img src = "img/estrela.png" title= "estrela.png" alt="estrela.jpg" border align="center" hspace=30 vspace=30 class="imagem" onclick="mudarImagem(this)"/></a>
+        <a href="#"><img src = "img/lindo 1.jpg" title= "lindo 1.jpg" alt="lindo 1.jpg" border align="center" hspace=30 vspace=30 class="imagem" onclick="mudarImagem(this)"/></a>
+        <a href="#"><img src = "img/gatinho.gif" title= "gatinho.gif" alt="gatinho.gif" border align="center" hspace=30 vspace=30 class="imagem" onclick="mudarImagem(this)"/></a>
+        <a href="#"><img src = "img/rosa linda.jpg" title= "rosa linda.jpg" alt="rosa linda.jpg" border align="center" hspace=30 vspace=30 class="imagem" onclick="mudarImagem(this)"/></a>
+        <a href="#"><img src = "img/fofo.jpg" title= "fofo.jpg" alt= "fofo.jpg" border align="center" hspace=30 vspace=30 class="imagem" onclick="mudarImagem(this)"/></a>
+    </div>
+    <div class="imagemGrande" id="containerImagem" >
+        <a style="float: right;" href="#" class="fecharImagem"><i class="fa fa-close" onclick="fecharImagem()"></i></a><br>
+        <img id="imagemExibicao" class="imagemExibicao" src = "img/flor.jpg" title= "flor.jpg" alt "flores" border  vspace=30 /><br>
+        
+        <!--Informações sobre a imagem selecionada-->
+        
+        <span class="infoImagem" id="infoImagem"></span>
+        
+        <!--Opções para a imagem selecionada-->
+        
+        <div class="opcoesImagem">
+            <button class="btn btn-primary">+ <i class="fa fa-search"></i></button>
+            <button class="btn btn-primary">- <i class="fa fa-search"></i></button>
+            <button class="btn btn-primary"><i class="fa fa-arrow-left"></i></button>
+            <button class="btn btn-primary"><i class="fa fa-arrow-right"></i></button>
+            <button class="btn btn-primary">?</button>
+            <button class="btn btn-primary">?</button>
+            <button class="btn btn-primary">Compartilhar</button>
+            <button class="btn btn-primary">Editar ?</button>
+            <button class="btn btn-primary">Imprimir</button>
+            <button class="btn btn-primary"><i class="fa fa-trash"></i></button>
+        </div>
+    </div>
+    </div>
+    
+    <!--Possível rodapé-->
+    
+    <footer>
+    
+    </footer>
+
+
+    <script src="js/index.js"></script>
+
+</body>
+    
+</html>
